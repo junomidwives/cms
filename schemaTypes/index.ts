@@ -1,1 +1,3 @@
-export const schemaTypes = []
+import {splitImageType} from './blocks/splitImageType'
+
+export const schemaTypes = [splitImageType]
