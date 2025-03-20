@@ -2,6 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const heroType = defineType({
   name: 'hero',
+  title: 'Hero Image',
   type: 'object',
   fields: [
     defineField({

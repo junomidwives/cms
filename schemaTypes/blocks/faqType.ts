@@ -1,4 +1,5 @@
 import {defineField, defineType} from 'sanity'
+import {MessageCircleQuestion} from 'lucide-react'
 
 export const faqType = defineType({
   name: 'faq',
@@ -11,7 +12,26 @@ export const faqType = defineType({
     }),
     defineField({
       name: 'body',
-      type: 'blockContent',
+      type: 'array',
+      of: [{type: 'block'}],
+    }),
+    defineField({
+      name: 'centered',
+      type: 'boolean',
+      description: 'Center the content in the page, useful for displaying individually',
+      initialValue: false,
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+    },
+    prepare({title}) {
+      return {
+        title,
+        subtitle: 'FAQ',
+        media: MessageCircleQuestion,
+      }
+    },
+  },
 })
