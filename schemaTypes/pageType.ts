@@ -1,11 +1,11 @@
-import {DocumentIcon} from '@sanity/icons'
+import {PanelsTopLeft} from 'lucide-react'
 import {defineField, defineType} from 'sanity'
 
 export const pageType = defineType({
   name: 'page',
   title: 'Page',
   type: 'document',
-  icon: DocumentIcon,
+  icon: PanelsTopLeft,
   fields: [
     defineField({
       name: 'title',
@@ -19,6 +19,11 @@ export const pageType = defineType({
       },
     }),
     defineField({
+      name: 'category',
+      description: '(optional)',
+      type: 'string',
+    }),
+    defineField({
       name: 'content',
       type: 'pageBuilder',
     }),
@@ -26,7 +31,15 @@ export const pageType = defineType({
   preview: {
     select: {
       title: 'title',
+      category: 'category',
       subtitle: 'slug.current',
+    },
+    prepare({title, subtitle, category}) {
+      return {
+        title: `${title}${category ? ` | ${category}` : ''}`,
+        subtitle: subtitle,
+        media: PanelsTopLeft,
+      }
     },
   },
 })
