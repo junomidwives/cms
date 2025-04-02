@@ -3,6 +3,8 @@ import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 import {structure} from './structure'
+import {table} from '@sanity/table'
+import {linkField} from 'sanity-plugin-link-field'
 
 export default defineConfig({
   name: 'default',
@@ -16,6 +18,8 @@ export default defineConfig({
       structure,
     }),
     visionTool(),
+    table(),
+    linkField(),
   ],
 
   schema: {
