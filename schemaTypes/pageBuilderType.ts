@@ -9,5 +9,9 @@ export const pageBuilderType = defineType({
     defineArrayMember({type: 'faq'}),
     defineArrayMember({type: 'logoGroup'}),
     defineArrayMember({type: 'blockContent'}),
+    defineArrayMember({type: 'centeredImage'}),
+    defineArrayMember({type: 'cta'}),
+    defineArrayMember({type: 'table'}),
+    defineArrayMember({type: 'recommendation'}),
   ],
 })

@@ -37,6 +37,19 @@ export const imageTextType = defineType({
       type: 'array',
       of: [{type: 'block'}],
     }),
+    defineField({
+      name: 'link',
+      type: 'link',
+      title: 'CTA',
+      options: {
+        enableText: true,
+      },
+    }),
+    defineField({
+      name: 'anchor',
+      description: '(optional)',
+      type: 'string',
+    }),
   ],
   preview: {
     select: {

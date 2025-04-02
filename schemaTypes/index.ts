@@ -6,6 +6,10 @@ import {pageBuilderType} from './pageBuilderType'
 import {pageType} from './pageType'
 import {siteSettingsType} from './siteSettingsType'
 import {blockContentType} from './blocks/blockContentType'
+import {birthStoryType} from './birthStoryType'
+import {centeredImageType} from './blocks/centeredImageType'
+import {ctaType} from './blocks/ctaType'
+import {recommendationType} from './blocks/recommendationType'
 
 export const schemaTypes = [
   imageTextType,
@@ -16,4 +20,8 @@ export const schemaTypes = [
   pageType,
   siteSettingsType,
   blockContentType,
+  birthStoryType,
+  centeredImageType,
+  ctaType,
+  recommendationType,
 ]
