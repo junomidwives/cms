@@ -1,6 +1,8 @@
-import {AlignCenter, AlignLeft, AlignRight} from 'lucide-react'
 import {defineField, defineType} from 'sanity'
+import {AlignCenterIcon} from '../../components/AlignCenterIcon'
+import {CtaIcon} from '../../components/CtaIcon'
 import {TextAlign} from '../../components/TextAlignComponent'
+import {CTAComponent} from '../../components/CtaComponent'
 
 export const blockContentType = defineType({
   name: 'blockContent',
@@ -28,13 +30,18 @@ export const blockContentType = defineType({
               {
                 title: 'Center',
                 value: 'center',
-                icon: AlignCenter,
+                icon: AlignCenterIcon,
                 component: (props) => TextAlign(props),
               },
             ],
           },
         },
         {type: 'image'},
+        {
+          type: 'cta',
+          title: 'CTA',
+          icon: CtaIcon,
+        },
       ],
     }),
   ],
