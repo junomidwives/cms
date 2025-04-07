@@ -10,6 +10,7 @@ import {birthStoryType} from './birthStoryType'
 import {centeredImageType} from './blocks/centeredImageType'
 import {ctaType} from './blocks/ctaType'
 import {recommendationType} from './blocks/recommendationType'
+import {blogType} from './blogType'
 
 export const schemaTypes = [
   imageTextType,
@@ -24,4 +25,5 @@ export const schemaTypes = [
   centeredImageType,
   ctaType,
   recommendationType,
+  blogType,
 ]

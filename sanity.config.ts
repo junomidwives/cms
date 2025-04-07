@@ -19,7 +19,9 @@ export default defineConfig({
     }),
     visionTool(),
     table(),
-    linkField(),
+    linkField({
+      linkableSchemaTypes: ['page', 'blog', 'birthStory'],
+    }),
   ],
 
   schema: {
