@@ -2,7 +2,6 @@ import {defineField, defineType} from 'sanity'
 import {AlignCenterIcon} from '../../components/AlignCenterIcon'
 import {CtaIcon} from '../../components/CtaIcon'
 import {TextAlign} from '../../components/TextAlignComponent'
-import {CTAComponent} from '../../components/CtaComponent'
 
 export const blockContentType = defineType({
   name: 'blockContent',
