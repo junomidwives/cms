@@ -2,6 +2,7 @@ import {defineField, defineType} from 'sanity'
 import {AlignCenterIcon} from '../../components/AlignCenterIcon'
 import {CtaIcon} from '../../components/CtaIcon'
 import {TextAlign} from '../../components/TextAlignComponent'
+import {UploadIcon} from '../../components/UploadIcon'
 
 export const blockContentType = defineType({
   name: 'blockContent',
@@ -41,6 +42,32 @@ export const blockContentType = defineType({
           title: 'CTA',
           icon: CtaIcon,
         },
+        defineField({
+          name: 'pdf',
+          type: 'file',
+          icon: UploadIcon,
+          options: {
+            accept: 'application/pdf',
+          },
+          fields: [
+            defineField({
+              name: 'description',
+              type: 'string',
+              title: 'File Description',
+            }),
+          ],
+          preview: {
+            select: {
+              title: 'description',
+            },
+            prepare({title}) {
+              return {
+                title,
+                subtitle: 'PDF',
+              }
+            },
+          },
+        }),
       ],
     }),
   ],
