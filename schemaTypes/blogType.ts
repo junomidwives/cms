@@ -29,7 +29,7 @@ export const blogType = defineType({
     defineField({
       name: 'publishedAt',
       type: 'date',
-      initialValue: new Date().toISOString(),
+      initialValue: new Date().toISOString().slice(0, 10),
     }),
     defineField({
       name: 'content',
