@@ -3,6 +3,7 @@ import {AlignCenterIcon} from '../../components/AlignCenterIcon'
 import {CtaIcon} from '../../components/CtaIcon'
 import {TextAlign} from '../../components/TextAlignComponent'
 import {UploadIcon} from '../../components/UploadIcon'
+import {ImageIcon} from '../../components/ImageIcon'
 
 export const blockContentType = defineType({
   name: 'blockContent',
@@ -36,7 +37,31 @@ export const blockContentType = defineType({
             ],
           },
         },
-        {type: 'image'},
+        {
+          title: 'Image',
+          name: 'imageBlock',
+          type: 'object',
+          icon: ImageIcon,
+          fields: [
+            defineField({
+              name: 'image',
+              type: 'image',
+              options: {
+                hotspot: true,
+              },
+            }),
+            defineField({
+              name: 'caption',
+              description: 'Caption to be displayed below the image (optional)',
+              type: 'string',
+            }),
+            defineField({
+              name: 'altText',
+              description: 'Describe the image for screen readers',
+              type: 'string',
+            }),
+          ],
+        },
         {
           type: 'cta',
           title: 'CTA',
