@@ -35,7 +35,20 @@ export const imageTextType = defineType({
     defineField({
       name: 'body',
       type: 'array',
-      of: [{type: 'block'}],
+      of: [
+        {
+          type: 'block',
+          marks: {
+            annotations: [
+              {
+                name: 'link',
+                title: 'Link',
+                type: 'link',
+              },
+            ],
+          },
+        },
+      ],
     }),
     defineField({
       name: 'link',
