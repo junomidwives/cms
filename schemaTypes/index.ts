@@ -11,6 +11,7 @@ import {centeredImageType} from './blocks/centeredImageType'
 import {ctaType} from './blocks/ctaType'
 import {recommendationType} from './blocks/recommendationType'
 import {blogType} from './blogType'
+import {pdfPageType} from './pdfPageType'
 
 export const schemaTypes = [
   imageTextType,
@@ -26,4 +27,5 @@ export const schemaTypes = [
   ctaType,
   recommendationType,
   blogType,
+  pdfPageType,
 ]
