@@ -28,7 +28,16 @@ export const imageTextType = defineType({
         }),
         defineField({
           name: 'caption',
+          title: 'Caption (optional)',
+          description: 'Displayed under the image.',
           type: 'string',
+        }),
+        defineField({
+          name: 'alt',
+          type: 'string',
+          title: 'Alt text',
+          description: 'Important for SEO and accessibility.',
+          validation: (Rule) => Rule.error('Alt text is required for all images.').required(),
         }),
       ],
     }),
