@@ -5,6 +5,7 @@ import {schemaTypes} from './schemaTypes'
 import {structure} from './structure'
 import {table} from '@sanity/table'
 import {linkField} from 'sanity-plugin-link-field'
+import {netlifyTool} from 'sanity-plugin-netlify'
 
 export default defineConfig({
   name: 'default',
@@ -22,6 +23,7 @@ export default defineConfig({
     linkField({
       linkableSchemaTypes: ['page', 'blog', 'birthStory'],
     }),
+    netlifyTool(),
   ],
 
   schema: {
