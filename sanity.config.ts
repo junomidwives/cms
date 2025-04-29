@@ -7,6 +7,8 @@ import {table} from '@sanity/table'
 import {linkField} from 'sanity-plugin-link-field'
 import {netlifyTool} from 'sanity-plugin-netlify'
 
+const visionDev = process.env.NODE_ENV === 'development' ? [visionTool()] : []
+
 export default defineConfig({
   name: 'default',
   title: 'juno-midwives',
@@ -18,11 +20,11 @@ export default defineConfig({
     structureTool({
       structure,
     }),
-    visionTool(),
     table(),
     linkField({
       linkableSchemaTypes: ['page', 'blog', 'birthStory'],
     }),
+    ...visionDev,
     netlifyTool(),
   ],
 
