@@ -28,8 +28,6 @@
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^5.0.2",
-    "@stackbit/cms-sanity": "^0.2.90",
-    "@stackbit/types": "^2.1.14",
     "@types/react": "^18.0.25",
     "eslint": "^9.9.0",
     "prettier": "^3.0.2",
