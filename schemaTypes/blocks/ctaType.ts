@@ -1,4 +1,5 @@
 import {defineField, defineType} from 'sanity'
+import {requiredLinkField} from 'sanity-plugin-link-field'
 
 export const ctaType = defineType({
   name: 'cta',
@@ -12,6 +13,7 @@ export const ctaType = defineType({
       options: {
         enableText: true,
       },
+      validation: (rule) => rule.custom((field) => requiredLinkField(field)),
     }),
   ],
   preview: {
