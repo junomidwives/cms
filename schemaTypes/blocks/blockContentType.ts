@@ -1,5 +1,4 @@
 import {defineField, defineType} from 'sanity'
-import {AlignCenterIcon} from '../../components/AlignCenterIcon'
 import {CtaIcon} from '../../components/CtaIcon'
 import {TextAlign} from '../../components/TextAlignComponent'
 import {UploadIcon} from '../../components/UploadIcon'
@@ -28,14 +27,19 @@ export const blockContentType = defineType({
               {title: 'Strong', value: 'strong'},
               {title: 'Emphasis', value: 'em'},
               {title: 'Underline', value: 'underline'},
-              {
-                title: 'Center',
-                value: 'center',
-                icon: AlignCenterIcon,
-                component: (props) => TextAlign(props),
-              },
             ],
           },
+          styles: [
+            {title: 'Normal', value: 'normal'},
+            {title: 'Heading 1', value: 'h1'},
+            {title: 'Heading 2', value: 'h2'},
+            {title: 'Heading 3', value: 'h3'},
+            {title: 'Heading 4', value: 'h4'},
+            {title: 'Heading 5', value: 'h5'},
+            {title: 'Heading 6', value: 'h6'},
+            {title: 'Centered', value: 'center', component: TextAlign},
+            {title: 'Quote', value: 'blockquote'},
+          ],
         },
         {
           title: 'Image',
