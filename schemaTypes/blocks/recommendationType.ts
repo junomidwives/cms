@@ -1,8 +1,10 @@
+import {MessageCircleHeart} from 'lucide-react'
 import {defineField, defineType} from 'sanity'
 
 export const recommendationType = defineType({
   name: 'recommendation',
   type: 'object',
+  icon: MessageCircleHeart,
   fields: [
     defineField({
       name: 'name',

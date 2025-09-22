@@ -1,9 +1,11 @@
 import {defineType} from 'sanity'
+import {CalendarDays} from 'lucide-react'
 
 export const calendlyType = defineType({
   name: 'calendly',
   title: 'Calendly',
   type: 'object',
+  icon: CalendarDays,
   fields: [
     {
       name: 'url',
@@ -16,4 +18,15 @@ export const calendlyType = defineType({
         }).error('Please enter a valid URL starting with http or https.'),
     },
   ],
+  preview: {
+    select: {
+      title: 'url',
+    },
+    prepare(selection) {
+      return {
+        title: 'Calendly',
+        subtitle: selection.title,
+      }
+    },
+  },
 })

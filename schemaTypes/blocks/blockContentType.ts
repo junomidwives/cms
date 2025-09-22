@@ -3,11 +3,13 @@ import {CtaIcon} from '../../components/CtaIcon'
 import {TextAlign} from '../../components/TextAlignComponent'
 import {UploadIcon} from '../../components/UploadIcon'
 import {ImageIcon} from '../../components/ImageIcon'
+import {TextCursorInputIcon} from 'lucide-react'
 
 export const blockContentType = defineType({
   name: 'blockContent',
   title: 'Free Content',
   type: 'object',
+  icon: TextCursorInputIcon,
   fields: [
     defineField({
       name: 'body',

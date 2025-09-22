@@ -1,9 +1,11 @@
+import {Image} from 'lucide-react'
 import {defineField, defineType} from 'sanity'
 
 export const centeredImageType = defineType({
   name: 'centeredImage',
   title: 'Image',
   type: 'object',
+  icon: Image,
   fields: [
     defineField({
       name: 'image',

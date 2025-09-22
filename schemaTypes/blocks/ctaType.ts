@@ -1,3 +1,4 @@
+import {Pointer} from 'lucide-react'
 import {defineField, defineType} from 'sanity'
 import {requiredLinkField} from 'sanity-plugin-link-field'
 
@@ -5,6 +6,7 @@ export const ctaType = defineType({
   name: 'cta',
   title: 'CTA',
   type: 'object',
+  icon: Pointer,
   fields: [
     defineField({
       name: 'link',

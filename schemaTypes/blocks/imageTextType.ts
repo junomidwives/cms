@@ -1,9 +1,11 @@
+import {LayoutList} from 'lucide-react'
 import {defineField, defineType} from 'sanity'
 
 export const imageTextType = defineType({
   name: 'imageText',
   title: 'Image and Text',
   type: 'object',
+  icon: LayoutList,
   fields: [
     defineField({
       name: 'orientation',

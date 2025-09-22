@@ -1,3 +1,4 @@
+import {Table} from 'lucide-react'
 import {defineType, defineArrayMember} from 'sanity'
 
 export const pageBuilderType = defineType({
@@ -11,7 +12,7 @@ export const pageBuilderType = defineType({
     defineArrayMember({type: 'blockContent'}),
     defineArrayMember({type: 'centeredImage'}),
     defineArrayMember({type: 'cta'}),
-    defineArrayMember({type: 'table'}),
+    defineArrayMember({type: 'table', icon: Table}),
     defineArrayMember({type: 'recommendation'}),
     defineArrayMember({type: 'calendly'}),
   ],

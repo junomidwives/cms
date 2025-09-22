@@ -5,6 +5,7 @@ export const logoGroupType = defineType({
   name: 'logoGroup',
   title: 'Logo Group',
   type: 'object',
+  icon: Grid2X2,
   fields: [
     defineField({
       name: 'title',
