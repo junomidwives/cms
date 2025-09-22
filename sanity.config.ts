@@ -7,7 +7,7 @@ import {table} from '@sanity/table'
 import {linkField} from 'sanity-plugin-link-field'
 import {dashboardTool} from '@sanity/dashboard'
 import {netlifyWidget} from 'sanity-plugin-dashboard-widget-netlify'
-import {Logo} from './components/Logo'
+import {Baby} from 'lucide-react'
 
 const visionDev = process.env.NODE_ENV === 'development' ? [visionTool()] : []
 
@@ -16,7 +16,7 @@ export default defineConfig({
   title: 'Juno Midwives',
   projectId: 's88cxh4b',
   dataset: 'production',
-  icon: Logo,
+  icon: Baby,
 
   plugins: [
     structureTool({
