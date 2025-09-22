@@ -13,5 +13,6 @@ export const pageBuilderType = defineType({
     defineArrayMember({type: 'cta'}),
     defineArrayMember({type: 'table'}),
     defineArrayMember({type: 'recommendation'}),
+    defineArrayMember({type: 'calendly'}),
   ],
 })
