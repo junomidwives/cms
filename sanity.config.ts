@@ -5,7 +5,8 @@ import {schemaTypes} from './schemaTypes'
 import {structure} from './structure'
 import {table} from '@sanity/table'
 import {linkField} from 'sanity-plugin-link-field'
-import {netlifyTool} from 'sanity-plugin-netlify'
+import {dashboardTool} from '@sanity/dashboard'
+import {netlifyWidget} from 'sanity-plugin-dashboard-widget-netlify'
 
 const visionDev = process.env.NODE_ENV === 'development' ? [visionTool()] : []
 
@@ -25,7 +26,22 @@ export default defineConfig({
       linkableSchemaTypes: ['page', 'blog', 'birthStory'],
     }),
     ...visionDev,
-    netlifyTool(),
+
+    dashboardTool({
+      widgets: [
+        netlifyWidget({
+          title: 'Netlify Deploy',
+          sites: [
+            {
+              title: 'Juno Midwives',
+              apiId: '4aa460fd-454f-43c7-a40d-dea9c747d9a8',
+              buildHookId: 'https://api.netlify.com/build_hooks/67fd2e8b77ba26b0f1bd82b0',
+              name: 'junomidwives',
+            },
+          ],
+        }),
+      ],
+    }),
   ],
 
   schema: {
