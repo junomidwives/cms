@@ -31,6 +31,10 @@ export const logoGroupType = defineType({
               name: 'alt',
               type: 'string',
             }),
+            defineField({
+              name: 'url',
+              type: 'url',
+            }),
           ],
         }),
       ],
