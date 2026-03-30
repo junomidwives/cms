@@ -15,4 +15,14 @@ export const structure: StructureResolver = (S) =>
         .schemaType('siteSettings')
         .title('Site Settings')
         .child(S.editor().id('siteSettings').schemaType('siteSettings').documentId('siteSettings')),
+      S.listItem()
+        .id('bioLinks')
+        .schemaType('bioLinks')
+        .title('Bio Links')
+        .child(
+          S.editor()
+            .id('bioLinks')
+            .schemaType('bioLinks')
+            .documentId('bioLinks'),
+        ),
     ])

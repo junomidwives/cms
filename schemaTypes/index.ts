@@ -13,6 +13,7 @@ import {calendlyType} from './blocks/calendlyType'
 import {recommendationType} from './blocks/recommendationType'
 import {blogType} from './blogType'
 import {pdfPageType} from './pdfPageType'
+import {bioLinksType} from './bioLinksType'
 
 export const schemaTypes = [
   imageTextType,
@@ -30,4 +31,5 @@ export const schemaTypes = [
   blogType,
   pdfPageType,
   calendlyType,
+  bioLinksType,
 ]
