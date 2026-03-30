@@ -1,5 +1,6 @@
 import {Link} from 'lucide-react'
 import {defineField, defineType} from 'sanity'
+import {requiredLinkField} from 'sanity-plugin-link-field'
 
 export const bioLinksType = defineType({
   name: 'bioLinks',
@@ -17,17 +18,13 @@ export const bioLinksType = defineType({
           icon: Link,
           fields: [
             defineField({
-              name: 'label',
-              title: 'Label',
-              type: 'string',
-              validation: (Rule) => Rule.required(),
-            }),
-            defineField({
-              name: 'url',
-              title: 'URL',
-              type: 'string',
-              description: 'Internal path (e.g. /about) or full external URL',
-              validation: (Rule) => Rule.required(),
+              name: 'link',
+              title: 'Link',
+              type: 'link',
+              options: {
+                enableText: true,
+              },
+              validation: (rule) => rule.custom((field) => requiredLinkField(field)),
             }),
             defineField({
               name: 'active',
@@ -39,14 +36,12 @@ export const bioLinksType = defineType({
           ],
           preview: {
             select: {
-              title: 'label',
-              subtitle: 'url',
+              title: 'link.text',
               active: 'active',
             },
-            prepare({title, subtitle, active}) {
+            prepare({title, active}) {
               return {
                 title: active ? title : `${title} (hidden)`,
-                subtitle,
                 media: Link,
               }
             },
