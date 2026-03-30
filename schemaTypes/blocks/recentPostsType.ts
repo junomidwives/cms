@@ -3,7 +3,7 @@ import {defineField, defineType} from 'sanity'
 
 export const recentPostsType = defineType({
   name: 'recentPosts',
-  title: 'Recent Blog Posts',
+  title: 'Recent Posts',
   type: 'object',
   icon: Newspaper,
   fields: [
@@ -12,6 +12,19 @@ export const recentPostsType = defineType({
       type: 'boolean',
       initialValue: true,
       hidden: true,
+    }),
+    defineField({
+      name: 'postType',
+      title: 'Post Type',
+      type: 'string',
+      initialValue: 'blog',
+      options: {
+        list: [
+          {title: 'Blog Posts', value: 'blog'},
+          {title: 'Birth Stories', value: 'birthStory'},
+        ],
+        layout: 'radio',
+      },
     }),
     defineField({
       name: 'heading',
@@ -24,6 +37,7 @@ export const recentPostsType = defineType({
       title: 'Posts',
       type: 'array',
       description: 'Select up to 3 posts to feature. Leave empty to show the 3 most recent.',
+      hidden: ({parent}) => parent?.postType === 'birthStory',
       validation: (Rule) => Rule.max(3),
       of: [
         {
@@ -32,14 +46,31 @@ export const recentPostsType = defineType({
         },
       ],
     }),
+    defineField({
+      name: 'birthStoryPosts',
+      title: 'Birth Stories',
+      type: 'array',
+      description: 'Select up to 3 stories to feature. Leave empty to show the 3 most recent.',
+      hidden: ({parent}) => parent?.postType !== 'birthStory',
+      validation: (Rule) => Rule.max(3),
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'birthStory'}],
+        },
+      ],
+    }),
   ],
   preview: {
     select: {
       title: 'heading',
+      postType: 'postType',
     },
-    prepare({title}) {
+    prepare({title, postType}) {
+      const label = postType === 'birthStory' ? 'Recent Birth Stories' : 'Recent Blog Posts'
       return {
-        title: title ? title : 'Recent Blog Posts',
+        title: label,
+        subtitle: title ? `Heading: ${title}` : 'No heading',
         media: Newspaper,
       }
     },
