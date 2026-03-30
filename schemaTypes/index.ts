@@ -14,6 +14,7 @@ import {recommendationType} from './blocks/recommendationType'
 import {blogType} from './blogType'
 import {pdfPageType} from './pdfPageType'
 import {bioLinksType} from './bioLinksType'
+import {recentPostsType} from './blocks/recentPostsType'
 
 export const schemaTypes = [
   imageTextType,
@@ -32,4 +33,5 @@ export const schemaTypes = [
   pdfPageType,
   calendlyType,
   bioLinksType,
+  recentPostsType,
 ]

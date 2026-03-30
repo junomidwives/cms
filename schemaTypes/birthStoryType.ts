@@ -9,6 +9,7 @@ export const birthStoryType = defineType({
   fields: [
     defineField({
       name: 'title',
+      title: 'Title',
       type: 'string',
     }),
     defineField({
@@ -20,7 +21,21 @@ export const birthStoryType = defineType({
       },
     }),
     defineField({
+      name: 'authorName',
+      title: 'Author Name',
+      description: 'e.g. "Sarah M."',
+      type: 'string',
+    }),
+    defineField({
+      name: 'excerpt',
+      title: 'Excerpt',
+      description: 'A short summary or teaser for the story',
+      type: 'text',
+      rows: 3,
+    }),
+    defineField({
       name: 'image',
+      title: 'Featured Image',
       type: 'image',
       options: {
         hotspot: true,
@@ -28,17 +43,15 @@ export const birthStoryType = defineType({
     }),
     defineField({
       name: 'publishedAt',
-      type: 'datetime',
-      initialValue: new Date().toISOString(),
+      title: 'Publish Date',
+      type: 'date',
+      initialValue: new Date().toISOString().slice(0, 10),
     }),
     defineField({
       name: 'content',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
-        },
-      ],
+      title: 'Full Story',
+      description: 'Optional full story body for a detail page',
+      type: 'blockContent',
     }),
   ],
 })
