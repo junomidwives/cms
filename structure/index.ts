@@ -16,13 +16,13 @@ export const structure: StructureResolver = (S) =>
         .title('Site Settings')
         .child(S.editor().id('siteSettings').schemaType('siteSettings').documentId('siteSettings')),
       S.listItem()
-        .id('navigationLinks')
-        .schemaType('navigationLinks')
-        .title('Navigation Links')
+        .id('bioLinks')
+        .schemaType('bioLinks')
+        .title('Bio Links')
         .child(
           S.editor()
-            .id('navigationLinks')
-            .schemaType('navigationLinks')
-            .documentId('navigationLinks'),
+            .id('bioLinks')
+            .schemaType('bioLinks')
+            .documentId('bioLinks'),
         ),
     ])

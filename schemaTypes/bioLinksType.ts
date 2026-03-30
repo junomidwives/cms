@@ -1,9 +1,9 @@
 import {Link} from 'lucide-react'
 import {defineField, defineType} from 'sanity'
 
-export const navigationLinksType = defineType({
-  name: 'navigationLinks',
-  title: 'Navigation Links',
+export const bioLinksType = defineType({
+  name: 'bioLinks',
+  title: 'Bio Links',
   type: 'document',
   icon: Link,
   fields: [
@@ -58,7 +58,7 @@ export const navigationLinksType = defineType({
   preview: {
     prepare() {
       return {
-        title: 'Navigation Links',
+        title: 'Bio Links',
       }
     },
   },
