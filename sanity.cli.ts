@@ -5,6 +5,9 @@ export default defineCliConfig({
     projectId: 's88cxh4b',
     dataset: 'production',
   },
-  autoUpdates: true,
   studioHost: 'juno-midwives',
+  deployment: {
+    autoUpdates: true,
+    appId: 'oky8gdo57suchbyujfrb1zet',
+  },
 })
