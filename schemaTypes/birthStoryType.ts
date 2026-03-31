@@ -53,5 +53,10 @@ export const birthStoryType = defineType({
       description: 'Optional full story body for a detail page',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'seo',
+      title: 'SEO',
+      type: 'seoMeta',
+    }),
   ],
 })

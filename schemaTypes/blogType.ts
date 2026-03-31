@@ -35,5 +35,10 @@ export const blogType = defineType({
       name: 'content',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'seo',
+      title: 'SEO',
+      type: 'seoMeta',
+    }),
   ],
 })

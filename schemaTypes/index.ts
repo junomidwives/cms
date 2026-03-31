@@ -16,6 +16,8 @@ import {pdfPageType} from './pdfPageType'
 import {bioLinksType} from './bioLinksType'
 import {recentPostsType} from './blocks/recentPostsType'
 import {travelRadiusMapType} from './blocks/travelRadiusMapType'
+import {seoMetaType} from './seoMetaType'
+import {staticPageSeoType} from './staticPageSeoType'
 
 export const schemaTypes = [
   imageTextType,
@@ -36,4 +38,6 @@ export const schemaTypes = [
   bioLinksType,
   recentPostsType,
   travelRadiusMapType,
+  seoMetaType,
+  staticPageSeoType,
 ]

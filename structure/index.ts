@@ -25,4 +25,14 @@ export const structure: StructureResolver = (S) =>
             .schemaType('bioLinks')
             .documentId('bioLinks'),
         ),
+      S.listItem()
+        .id('staticPageSeo')
+        .schemaType('staticPageSeo')
+        .title('Static Page SEO')
+        .child(
+          S.editor()
+            .id('staticPageSeo')
+            .schemaType('staticPageSeo')
+            .documentId('staticPageSeo'),
+        ),
     ])
