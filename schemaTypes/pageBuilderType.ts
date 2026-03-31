@@ -16,5 +16,6 @@ export const pageBuilderType = defineType({
     defineArrayMember({type: 'recommendation'}),
     defineArrayMember({type: 'calendly'}),
     defineArrayMember({type: 'recentPosts'}),
+    defineArrayMember({type: 'travelRadiusMap'}),
   ],
 })

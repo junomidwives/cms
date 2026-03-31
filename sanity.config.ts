@@ -7,6 +7,7 @@ import {table} from '@sanity/table'
 import {linkField} from 'sanity-plugin-link-field'
 import {dashboardTool} from '@sanity/dashboard'
 import {netlifyWidget} from 'sanity-plugin-dashboard-widget-netlify'
+import {googleMapsInput} from '@sanity/google-maps-input'
 import {Baby} from 'lucide-react'
 
 const visionDev = process.env.NODE_ENV === 'development' ? [visionTool()] : []
@@ -25,6 +26,9 @@ export default defineConfig({
     table(),
     linkField({
       linkableSchemaTypes: ['page', 'blog', 'birthStory'],
+    }),
+    googleMapsInput({
+      apiKey: process.env.SANITY_STUDIO_GOOGLE_MAPS_API_KEY!,
     }),
     ...visionDev,
 
