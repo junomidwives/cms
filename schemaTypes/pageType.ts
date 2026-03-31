@@ -27,6 +27,11 @@ export const pageType = defineType({
       name: 'content',
       type: 'pageBuilder',
     }),
+    defineField({
+      name: 'seo',
+      title: 'SEO',
+      type: 'seoMeta',
+    }),
   ],
   preview: {
     select: {
