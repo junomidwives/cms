@@ -15,6 +15,7 @@ import {blogType} from './blogType'
 import {pdfPageType} from './pdfPageType'
 import {bioLinksType} from './bioLinksType'
 import {recentPostsType} from './blocks/recentPostsType'
+import {travelRadiusMapType} from './blocks/travelRadiusMapType'
 
 export const schemaTypes = [
   imageTextType,
@@ -34,4 +35,5 @@ export const schemaTypes = [
   calendlyType,
   bioLinksType,
   recentPostsType,
+  travelRadiusMapType,
 ]
