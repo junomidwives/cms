@@ -18,6 +18,7 @@ import {recentPostsType} from './blocks/recentPostsType'
 import {travelRadiusMapType} from './blocks/travelRadiusMapType'
 import {seoMetaType} from './seoMetaType'
 import {staticPageSeoType} from './staticPageSeoType'
+import {redirectType} from './redirectType'
 
 export const schemaTypes = [
   imageTextType,
@@ -40,4 +41,5 @@ export const schemaTypes = [
   travelRadiusMapType,
   seoMetaType,
   staticPageSeoType,
+  redirectType,
 ]
