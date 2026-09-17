@@ -74,6 +74,10 @@ export const blockContentType = defineType({
           title: 'CTA',
           icon: CtaIcon,
         },
+        {
+          type: 'videoEmbed',
+          title: 'Video Embed',
+        },
         defineField({
           name: 'pdf',
           type: 'file',
