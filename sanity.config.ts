@@ -40,7 +40,7 @@ export default defineConfig({
             {
               title: 'Juno Midwives',
               apiId: '4aa460fd-454f-43c7-a40d-dea9c747d9a8',
-              buildHookId: '67fd2e8b77ba26b0f1bd82b0',
+              buildHookId: process.env.SANITY_STUDIO_NETLIFY_BUILD_HOOK_ID!,
               name: 'junomidwives',
             },
           ],
