@@ -10,6 +10,7 @@ import {birthStoryType} from './birthStoryType'
 import {centeredImageType} from './blocks/centeredImageType'
 import {ctaType} from './blocks/ctaType'
 import {calendlyType} from './blocks/calendlyType'
+import {videoEmbedType} from './blocks/videoEmbedType'
 import {recommendationType} from './blocks/recommendationType'
 import {blogType} from './blogType'
 import {pdfPageType} from './pdfPageType'
@@ -36,6 +37,7 @@ export const schemaTypes = [
   blogType,
   pdfPageType,
   calendlyType,
+  videoEmbedType,
   bioLinksType,
   recentPostsType,
   travelRadiusMapType,
