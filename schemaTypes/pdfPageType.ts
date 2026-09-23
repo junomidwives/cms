@@ -1,5 +1,6 @@
 import {PanelsTopLeft} from 'lucide-react'
 import {defineField, defineType} from 'sanity'
+import {slugify, slugValidation} from './slug'
 
 export const pdfPageType = defineType({
   name: 'pdfPage',
@@ -16,7 +17,9 @@ export const pdfPageType = defineType({
       type: 'slug',
       options: {
         source: 'title',
+        slugify,
       },
+      validation: slugValidation,
     }),
     defineField({
       name: 'pdf',
