@@ -1,5 +1,6 @@
 import {Baby} from 'lucide-react'
 import {defineField, defineType} from 'sanity'
+import {slugify, slugValidation} from './slug'
 
 export const birthStoryType = defineType({
   name: 'birthStory',
@@ -18,7 +19,9 @@ export const birthStoryType = defineType({
       options: {
         source: 'title',
         maxLength: 96,
+        slugify,
       },
+      validation: slugValidation,
     }),
     defineField({
       name: 'authorName',

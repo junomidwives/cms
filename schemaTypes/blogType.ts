@@ -1,5 +1,6 @@
 import {Newspaper} from 'lucide-react'
 import {defineField, defineType} from 'sanity'
+import {slugify, slugValidation} from './slug'
 
 export const blogType = defineType({
   name: 'blog',
@@ -17,7 +18,9 @@ export const blogType = defineType({
       options: {
         source: 'title',
         maxLength: 96,
+        slugify,
       },
+      validation: slugValidation,
     }),
     defineField({
       name: 'image',
