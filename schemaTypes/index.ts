@@ -11,6 +11,7 @@ import {centeredImageType} from './blocks/centeredImageType'
 import {ctaType} from './blocks/ctaType'
 import {calendlyType} from './blocks/calendlyType'
 import {videoEmbedType} from './blocks/videoEmbedType'
+import {newsletterSignupType} from './blocks/newsletterSignupType'
 import {recommendationType} from './blocks/recommendationType'
 import {blogType} from './blogType'
 import {pdfPageType} from './pdfPageType'
@@ -38,6 +39,7 @@ export const schemaTypes = [
   pdfPageType,
   calendlyType,
   videoEmbedType,
+  newsletterSignupType,
   bioLinksType,
   recentPostsType,
   travelRadiusMapType,

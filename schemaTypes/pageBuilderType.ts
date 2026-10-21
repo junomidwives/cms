@@ -18,5 +18,6 @@ export const pageBuilderType = defineType({
     defineArrayMember({type: 'videoEmbed'}),
     defineArrayMember({type: 'recentPosts'}),
     defineArrayMember({type: 'travelRadiusMap'}),
+    defineArrayMember({type: 'newsletterSignup'}),
   ],
 })
