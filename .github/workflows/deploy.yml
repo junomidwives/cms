@@ -1,0 +1,33 @@
+name: Deploy Studio
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-studio
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy to sanity.studio
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Deploy studio
+        run: npx sanity deploy --yes --schema-required
+        env:
+          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_DEPLOY_TOKEN }}
+          SANITY_STUDIO_GOOGLE_MAPS_API_KEY: ${{ secrets.SANITY_STUDIO_GOOGLE_MAPS_API_KEY }}
+          SANITY_STUDIO_NETLIFY_BUILD_HOOK_ID: ${{ secrets.SANITY_STUDIO_NETLIFY_BUILD_HOOK_ID }}
