@@ -49,8 +49,9 @@ export default defineConfig({
     }),
   ],
 
-  // Releases need a paid plan, so hide the tab and release UI.
+  // Releases and scheduled drafts need a paid plan, so hide their tabs and UI.
   releases: {enabled: false},
+  scheduledDrafts: {enabled: false},
 
   schema: {
     types: schemaTypes,
