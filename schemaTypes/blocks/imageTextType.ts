@@ -30,6 +30,21 @@ export const imageTextType = defineType({
           },
         }),
         defineField({
+          name: 'fit',
+          description:
+            'Crop to square suits photos. Show whole image suits graphics like tables or diagrams.',
+          type: 'string',
+          options: {
+            list: [
+              {value: 'cover', title: 'Crop to square'},
+              {value: 'contain', title: 'Show whole image'},
+            ],
+            layout: 'radio',
+            direction: 'horizontal',
+          },
+          initialValue: 'cover',
+        }),
+        defineField({
           name: 'caption',
           title: 'Caption (optional)',
           description: 'Displayed under the image.',
