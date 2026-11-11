@@ -19,5 +19,7 @@ export const pageBuilderType = defineType({
     defineArrayMember({type: 'recentPosts'}),
     defineArrayMember({type: 'travelRadiusMap'}),
     defineArrayMember({type: 'newsletterSignup'}),
+    defineArrayMember({type: 'comparison'}),
+    defineArrayMember({type: 'steps'}),
   ],
 })
