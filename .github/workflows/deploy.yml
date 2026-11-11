@@ -31,3 +31,5 @@ jobs:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_DEPLOY_TOKEN }}
           SANITY_STUDIO_GOOGLE_MAPS_API_KEY: ${{ secrets.SANITY_STUDIO_GOOGLE_MAPS_API_KEY }}
           SANITY_STUDIO_NETLIFY_BUILD_HOOK_ID: ${{ secrets.SANITY_STUDIO_NETLIFY_BUILD_HOOK_ID }}
+          # Not secret. Turns on the Preview tab (Presentation tool).
+          SANITY_STUDIO_PREVIEW_URL: https://qa.junomidwives.co.uk
