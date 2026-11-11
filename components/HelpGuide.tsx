@@ -75,6 +75,25 @@ export function HelpGuide() {
           </P>
         </Section>
 
+        <Section title="See your draft before publishing">
+          <Steps
+            items={[
+              <>
+                Click <strong>Preview</strong> in the top bar.
+              </>,
+              'The website appears on the right, showing your drafts exactly as they will look once published. Click around the site, or pick a page from the address bar at the top.',
+              'Edit the document on the left. The preview updates as you type.',
+              <>
+                When you're happy, click <strong>Publish</strong>, then deploy the website.
+              </>,
+            ]}
+          />
+          <Note tone="primary">
+            The preview is only visible to people logged in to this Studio. Visitors to the real
+            website don't see drafts.
+          </Note>
+        </Section>
+
         <Section title="Undo a change you haven't published yet">
           <Steps
             items={[
