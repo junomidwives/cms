@@ -115,6 +115,11 @@ export function HelpGuide() {
             items={[
               'Open the document, for example the Home page under Pages.',
               <>
+                At the top of the document, click the <strong>Published</strong> tab (next to{' '}
+                <strong>Drafts</strong>). If you skip this, Sanity may say it &ldquo;couldn't find
+                the document revision&rdquo;.
+              </>,
+              <>
                 Open its <strong>History</strong>: click the clock icon in the top-right of the
                 document, or the &ldquo;Published …&rdquo; time at the bottom.
               </>,
