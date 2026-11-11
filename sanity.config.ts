@@ -11,6 +11,7 @@ import {googleMapsInput} from '@sanity/google-maps-input'
 import {Baby} from 'lucide-react'
 import {presentationTool} from 'sanity/presentation'
 import {locations, mainDocuments} from './presentation/resolve'
+import {WaitingToGoLiveWidget} from './components/WaitingToGoLiveWidget'
 
 // Draft preview in Studio. Points at the QA site, which is built with
 // SANITY_PREVIEW=true (see the frontend README). Left out if the URL isn't set.
@@ -61,6 +62,11 @@ export default defineConfig({
             },
           ],
         }),
+        {
+          name: 'waiting-to-go-live',
+          component: WaitingToGoLiveWidget,
+          layout: {width: 'medium'},
+        },
       ],
     }),
   ],

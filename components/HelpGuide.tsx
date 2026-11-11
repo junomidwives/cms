@@ -163,8 +163,10 @@ export function HelpGuide() {
             ]}
           />
           <P>
-            Before deploying, check that you're happy for <strong>everything</strong> you've
-            published to go live, not just the latest change.
+            Before deploying, check the <strong>Waiting to go live</strong> panel on the Dashboard.
+            It lists everything published since the last deploy, and all of it will go live
+            together. If something there isn't ready, restore it to an earlier version first (see
+            above).
           </P>
         </Section>
 
