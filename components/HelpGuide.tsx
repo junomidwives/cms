@@ -165,8 +165,9 @@ export function HelpGuide() {
           <P>
             Before deploying, check the <strong>Waiting to go live</strong> panel on the Dashboard.
             It lists everything published since the last deploy, and all of it will go live
-            together. If something there isn't ready, restore it to an earlier version first (see
-            above).
+            together. If something there isn't ready, click <strong>Move back to draft</strong> next
+            to it. The website version stays as it is, and your changes are kept as a draft to
+            finish later.
           </P>
         </Section>
 
