@@ -21,6 +21,8 @@ import {travelRadiusMapType} from './blocks/travelRadiusMapType'
 import {seoMetaType} from './seoMetaType'
 import {staticPageSeoType} from './staticPageSeoType'
 import {redirectType} from './redirectType'
+import {comparisonType} from './blocks/comparisonType'
+import {stepsType} from './blocks/stepsType'
 
 export const schemaTypes = [
   imageTextType,
@@ -46,4 +48,6 @@ export const schemaTypes = [
   seoMetaType,
   staticPageSeoType,
   redirectType,
+  comparisonType,
+  stepsType,
 ]
