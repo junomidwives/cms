@@ -24,6 +24,8 @@ const DOCUMENT_TYPES = [
   'staticPageSeo',
 ]
 const REFRESH_MS = 60_000
+// Give up on slow requests so the panel shows an error instead of spinning forever.
+const TIMEOUT_MS = 10_000
 const API_VERSION = '2025-02-19'
 
 const QUERY = `*[_type in $types && _updatedAt > $since] | order(_updatedAt desc)`
@@ -92,6 +94,7 @@ export function WaitingToGoLiveWidget() {
       const res = await raw.request<{documents: SanityDocument[]}>({
         uri: `/data/history/${dataset}/documents/${id}`,
         query: {time},
+        timeout: TIMEOUT_MS,
       })
       return res.documents[0]
     },
@@ -100,7 +103,10 @@ export function WaitingToGoLiveWidget() {
 
   const load = useCallback(async () => {
     try {
-      const res = await fetch(`${SITE_URL}/build-info.json`, {cache: 'no-store'})
+      const res = await fetch(`${SITE_URL}/build-info.json`, {
+        cache: 'no-store',
+        signal: AbortSignal.timeout(TIMEOUT_MS),
+      })
       if (!res.ok) throw new Error(`build-info responded ${res.status}`)
       const {builtAt} = (await res.json()) as {builtAt?: string}
       if (!builtAt) throw new Error('build-info has no builtAt')
