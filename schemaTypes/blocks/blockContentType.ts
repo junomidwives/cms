@@ -111,7 +111,7 @@ export const blockContentType = defineType({
     defineField({
       name: 'background',
       description:
-        'Optional. Puts this section on a full-width coloured band, e.g. for a testimonial quote.',
+        'Optional. Puts this section on a light blue band, e.g. for a testimonial quote.',
       type: 'string',
       options: {
         list: [
@@ -124,4 +124,20 @@ export const blockContentType = defineType({
       initialValue: 'none',
     }),
   ],
+  // Without this, the list shows the first string field (Background, e.g. "brand").
+  preview: {
+    select: {blocks: 'body', background: 'background'},
+    prepare({blocks, background}) {
+      const block = (blocks || []).find((b: {_type: string}) => b._type === 'block')
+      const text = block?.children
+        ?.filter((child: {_type: string}) => child._type === 'span')
+        .map((span: {text: string}) => span.text)
+        .join('')
+        .trim()
+      return {
+        title: text ? (text.length > 50 ? `${text.slice(0, 50)}…` : text) : 'Free Content',
+        subtitle: background === 'brand' ? 'Free Content · light blue band' : 'Free Content',
+      }
+    },
+  },
 })
