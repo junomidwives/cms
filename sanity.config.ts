@@ -9,6 +9,21 @@ import {dashboardTool} from '@sanity/dashboard'
 import {netlifyWidget} from 'sanity-plugin-dashboard-widget-netlify'
 import {googleMapsInput} from '@sanity/google-maps-input'
 import {Baby} from 'lucide-react'
+import {presentationTool} from 'sanity/presentation'
+import {locations, mainDocuments} from './presentation/resolve'
+
+// Draft preview in Studio. Points at the QA site, which is built with
+// SANITY_PREVIEW=true (see the frontend README). Left out if the URL isn't set.
+const previewUrl = process.env.SANITY_STUDIO_PREVIEW_URL
+const preview = previewUrl
+  ? [
+      presentationTool({
+        title: 'Preview',
+        previewUrl: {initial: previewUrl, previewMode: {enable: '/preview/enable'}},
+        resolve: {mainDocuments, locations},
+      }),
+    ]
+  : []
 
 const visionDev = process.env.NODE_ENV === 'development' ? [visionTool()] : []
 
@@ -23,6 +38,7 @@ export default defineConfig({
     structureTool({
       structure,
     }),
+    ...preview,
     table(),
     linkField({
       linkableSchemaTypes: ['page', 'blog', 'birthStory'],
