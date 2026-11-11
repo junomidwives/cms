@@ -9,6 +9,17 @@ export const travelRadiusMapType = defineType({
   icon: MapPin,
   fields: [
     defineField({
+      name: 'orientation',
+      type: 'string',
+      options: {
+        list: [
+          {value: 'mapLeft', title: 'Map Left'},
+          {value: 'mapRight', title: 'Map Right'},
+        ],
+      },
+      initialValue: 'mapLeft',
+    }),
+    defineField({
       name: 'title',
       type: 'string',
     }),
@@ -24,6 +35,26 @@ export const travelRadiusMapType = defineType({
       type: 'number',
       description: 'The travel radius in kilometres.',
       validation: (Rule) => Rule.required().positive(),
+    }),
+    defineField({
+      name: 'body',
+      title: 'Text',
+      description: 'Shown next to the map.',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          marks: {
+            annotations: [
+              {
+                name: 'link',
+                title: 'Link',
+                type: 'link',
+              },
+            ],
+          },
+        },
+      ],
     }),
   ],
   preview: {
