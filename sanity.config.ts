@@ -49,6 +49,9 @@ export default defineConfig({
     }),
   ],
 
+  // Releases need a paid plan, so hide the tab and release UI.
+  releases: {enabled: false},
+
   schema: {
     types: schemaTypes,
   },

@@ -1,4 +1,6 @@
 import type {StructureResolver} from 'sanity/structure'
+import {CircleHelp} from 'lucide-react'
+import {HelpGuide} from '../components/HelpGuide'
 
 export const structure: StructureResolver = (S) =>
   S.list()
@@ -36,4 +38,10 @@ export const structure: StructureResolver = (S) =>
             .schemaType('staticPageSeo')
             .documentId('staticPageSeo'),
         ),
+      S.divider(),
+      S.listItem()
+        .id('help')
+        .title('Help: Undoing changes')
+        .icon(CircleHelp)
+        .child(S.component(HelpGuide).id('help').title('Help: Undoing changes')),
     ])
