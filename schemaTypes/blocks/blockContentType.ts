@@ -4,6 +4,7 @@ import {TextAlign} from '../../components/TextAlignComponent'
 import {UploadIcon} from '../../components/UploadIcon'
 import {ImageIcon} from '../../components/ImageIcon'
 import {TextCursorInputIcon} from 'lucide-react'
+import {largeTextStyles} from '../../components/LargeTextStyle'
 
 export const blockContentType = defineType({
   name: 'blockContent',
@@ -41,6 +42,7 @@ export const blockContentType = defineType({
             {title: 'Heading 6', value: 'h6'},
             {title: 'Centered', value: 'center', component: TextAlign},
             {title: 'Quote', value: 'blockquote'},
+            ...largeTextStyles,
           ],
         },
         {
