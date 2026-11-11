@@ -108,5 +108,20 @@ export const blockContentType = defineType({
         }),
       ],
     }),
+    defineField({
+      name: 'background',
+      description:
+        'Optional. Puts this section on a full-width coloured band, e.g. for a testimonial quote.',
+      type: 'string',
+      options: {
+        list: [
+          {value: 'none', title: 'None'},
+          {value: 'brand', title: 'Light blue (header and footer colour)'},
+        ],
+        layout: 'radio',
+        direction: 'horizontal',
+      },
+      initialValue: 'none',
+    }),
   ],
 })
